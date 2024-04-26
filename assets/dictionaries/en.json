@@ -1,0 +1,19 @@
+{
+    "LoginPage": {
+      "HeaderTitle": "ADS - Login",
+      "HeaderContent": "Welcome, please enter your login information",
+      "Account": "Account",
+      "Password": "Password",
+      "Recover": "Forgot password",
+      "Login": "Login",
+      "Policies": "By clicking the continue button, you agree to",
+      "and": "and",
+      "Company": "ADS Company",
+      "RecoverTitle": "Forgot your password?",
+      "RecoverContent": "Enter your email address to reset your password",
+      "ResetPassword": "Reset password",
+      "Back": "Back",
+      "Policy": "Terms of Use",
+"Privacy": "Privacy Policy"
+    }
+  }

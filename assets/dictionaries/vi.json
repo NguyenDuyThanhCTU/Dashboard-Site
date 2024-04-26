@@ -1,0 +1,19 @@
+{
+    "LoginPage":{
+        "HeaderTitle":"ADS - Đăng nhập",
+        "HeaderContent":"Xin chào, vui lòng nhập thông tin đăng nhập",
+        "Account":"Tài khoản",
+        "Password":"Mật khẩu",
+        "Recover":"Quên mật khẩu",
+        "Login":"Đăng nhập",
+        "Policies":"Bằng việc nhấn nút tiếp tục, bạn đã đồng ý với",
+        "and":"và",
+        "Company":"Công Ty ADS",
+        "RecoverTitle":"Bạn quên mật khẩu?",
+        "RecoverContent":"Nhập email của bạn để đặt lại mật khẩu",
+        "ResetPassword":"Đặt lại mật khẩu",
+        "Back":"Quay lại",
+        "Policy":"Điều khoản sử dụng",
+        "Privacy":"Chính sách bảo mật"
+    }
+}
