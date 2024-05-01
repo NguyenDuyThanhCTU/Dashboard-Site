@@ -6,6 +6,7 @@ export interface HeaderClientProps {
 
 //Config Props
 export interface InformationProps {
+  id: string;
   ImageNotFound: string;
   NotFoundNavigate: string;
   LogoSnippet: string;
@@ -172,7 +173,7 @@ export interface AccountProps {
   name: string;
   username: string;
   password: string;
-  role: 'editor' | 'user' | 'admin';
+  role: 'user' | 'user1' | 'admin';
   apiKey: string;
   appId: string;
   firebaseConfig: FirebaseConfigProps;
@@ -183,6 +184,10 @@ export interface AccountProps {
   image?: string;
   phone?: string;
   email?: string;
+  address?: string;
+  dateofbirth?: string;
+  gender?: string;
+  introduce?: string;
 }
 
 //Plugin

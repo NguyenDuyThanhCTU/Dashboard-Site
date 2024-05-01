@@ -1,0 +1,47 @@
+import InputForm from '@components/dashboard/items/UI/InputForm';
+import React from 'react';
+
+const AccountForm = ({ setIsOpen }: any) => {
+  const genderItems = [
+    { label: 'Nam', value: 'Nam' },
+    { label: 'Nữ', value: 'Nữ' },
+    { label: 'Khác', value: 'Khác' },
+  ];
+  const HandleSubmit = () => {};
+  return (
+    <div className="">
+      <div className="flex flex-col gap-2 pb-4">
+        <InputForm Label="Họ Tên" Type="Input" field="name" />
+        <InputForm Label="Email" Type="Input" field="email" />
+        <InputForm Label="Số Điện Thoại" Type="Input" field="phone" />
+
+        <InputForm Label="Địa Chỉ" Type="Input" field="address" />
+        <InputForm Label="Ngày Sinh" Type="DatePicker" field="dateofbirth" />
+        <InputForm
+          Label="Giới Tính"
+          Type="Radio"
+          field="gender"
+          Option={genderItems}
+        />
+        <InputForm Label="Giới Thiệu" Type="TextArea" field="introduce" />
+        <InputForm Label="Ảnh Đại Diện" Type="Upload" field="image" />
+      </div>
+      <div className="flex items-center justify-end gap-5  cursor-pointer py-4 border-t">
+        <div
+          className="py-2 px-6 border rounded-md hover:bg-gray-200 hover:border-gray-500"
+          onClick={() => setIsOpen(false)}
+        >
+          Trở về
+        </div>
+        <div
+          className="py-2 px-6 bg-red-500 rounded-md text-white hover:bg-red-700"
+          onClick={() => HandleSubmit()}
+        >
+          Cập nhật
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AccountForm;

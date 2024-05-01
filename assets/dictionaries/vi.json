@@ -1,19 +1,143 @@
 {
-    "LoginPage":{
-        "HeaderTitle":"ADS - Đăng nhập",
-        "HeaderContent":"Xin chào, vui lòng nhập thông tin đăng nhập",
-        "Account":"Tài khoản",
-        "Password":"Mật khẩu",
-        "Recover":"Quên mật khẩu",
-        "Login":"Đăng nhập",
-        "Policies":"Bằng việc nhấn nút tiếp tục, bạn đã đồng ý với",
-        "and":"và",
-        "Company":"Công Ty ADS",
-        "RecoverTitle":"Bạn quên mật khẩu?",
-        "RecoverContent":"Nhập email của bạn để đặt lại mật khẩu",
-        "ResetPassword":"Đặt lại mật khẩu",
-        "Back":"Quay lại",
-        "Policy":"Điều khoản sử dụng",
-        "Privacy":"Chính sách bảo mật"
-    }
+    "DashboardPage": {
+      
+        "Header": [
+          {
+            "label": "Cấu Hình",
+            "value": "cau-hinh",
+            "icon": "IoSettingsOutline",
+            "children": []
+          },
+          {
+            "label": "Sản Phẩm",
+            "value": "danh-sach-san-pham",
+            "icon": "GiStarSattelites",
+            "children": [
+              {
+                "label": "Danh Sách Sản Phẩm",
+                "value": "danh-sach-san-pham",
+                "icon": "PiCirclesThreePlusDuotone"
+              },
+              {
+                "label": "Danh Mục Sản Phẩm",
+                "value": "danh-muc-san-pham",
+                "icon": "CiBoxList"
+              }
+            ]
+          },
+          {
+            "label": "Bài Viết",
+            "value": "danh-sach-bai-viet",
+            "icon": "BsPostcard",
+            "children": [
+              {
+                "label": "Danh Sách Bài Viết",
+                "value": "danh-sach-bai-viet",
+                "icon": "IoListSharp"
+              },
+              {
+                "label": "Danh Mục Bài Viết",
+                "value": "danh-muc-bai-viet",
+                "icon": "CgListTree"
+              },
+              {
+                "label": "Bài giới thiệu",
+                "value": "bai-gioi-thieu",
+                "icon": "BsFileEarmarkPost"
+              }
+            ]
+          },
+          {
+            "label": "Truyền Thông",
+            "value": "kenh-truyen-thong",
+            "icon": "IoShareSocialOutline",
+            "children": [
+              {
+                "label": "Kênh Truyền Thông",
+                "value": "kenh-truyen-thong",
+                "icon": "PiShareNetworkLight"
+              },
+              {
+                "label": "Slide giới thiệu",
+                "value": "slide-gioi-thieu",
+                "icon": "BiSlideshow"
+              },
+              {
+                "label": "Bộ sưu tập",
+                "value": "bo-suu-tap",
+                "icon": "IoImagesOutline"
+              }
+            ]
+          },
+          {
+            "label": "Tài Khoản",
+            "value": "thong-tin-tai-khoan",
+            "icon": "MdManageAccounts",
+            "children": [
+              {
+                "label": "Thông Tin Tài Khoản",
+                "value": "thong-tin-tai-khoan",
+                "icon": "AiOutlineProfile"
+              },
+              {
+                "label": "Quản Lý Tài Khoản",
+                "value": "quan-ly-tai-khoan",
+                "icon": "BiSolidUserAccount"
+              }
+            ]
+          },
+          {
+            "label": "Báo Cáo",
+            "value": "bao-cao",
+            "icon": "TbReport",
+            "children": [
+              {
+                "label": "Lượt Truy Cập",
+                "value": "luot-truy-cap",
+                "icon": "BiLoader"
+              },
+              {
+                "label": "Phản Hồi của Khách Hàng",
+                "value": "phan-hoi-cua-khach-hang",
+                "icon": "BiPencil"
+              },
+              {
+                "label": "Đơn Hàng",
+                "value": "don-hang",
+                "icon": "BiCube"
+              },
+              {
+                "label": "Sản Phẩm Xem Nhiều",
+                "value": "san-pham-xem-nhieu",
+                "icon": "BiHappy"
+              }
+            ]
+          },
+          {
+            "label": "Tiện Ích",
+            "value": "dich-vu",
+            "icon": "BiHive",
+            "children": [
+              {
+                "label": "Chi Nhánh",
+                "value": "chi-nhanh",
+                "icon": "GoGitBranch"
+              },
+              {
+                "label": "Đối Tác",
+                "value": "doi-tac",
+                "icon": "LuGitCompare"
+
+              }
+            ]
+          }
+        ],
+
+        "Function":[
+
+        ],
+        "NightMode":"Chế độ ban đêm"
+    
+    
+      }
 }

@@ -1,19 +1,134 @@
 {
-    "LoginPage": {
-      "HeaderTitle": "ADS - Login",
-      "HeaderContent": "Welcome, please enter your login information",
-      "Account": "Account",
-      "Password": "Password",
-      "Recover": "Forgot password",
-      "Login": "Login",
-      "Policies": "By clicking the continue button, you agree to",
-      "and": "and",
-      "Company": "ADS Company",
-      "RecoverTitle": "Forgot your password?",
-      "RecoverContent": "Enter your email address to reset your password",
-      "ResetPassword": "Reset password",
-      "Back": "Back",
-      "Policy": "Terms of Use",
-"Privacy": "Privacy Policy"
-    }
+  "DashboardPage": {
+    "Header": [
+      {
+        "label": "Configuration",
+        "value": "cau-hinh",
+        "icon": "IoSettingsOutline",
+        "children": []
+      },
+      {
+        "label": "Products",
+        "value": "danh-sach-san-pham",
+        "icon": "GiStarSattelites",
+        "children": [
+          {
+            "label": "Product List",
+            "value": "danh-sach-san-pham",
+            "icon": "PiCirclesThreePlusDuotone"
+          },
+          {
+            "label": "Product Category",
+            "value": "danh-muc-san-pham",
+            "icon": "CiBoxList"
+          }
+        ]
+      },
+      {
+        "label": "Articles",
+        "value": "danh-sach-bai-viet",
+        "icon": "BsPostcard",
+        "children": [
+          {
+            "label": "Article List",
+            "value": "danh-sach-bai-viet",
+            "icon": "IoListSharp"
+          },
+          {
+            "label": "Article Category",
+            "value": "danh-muc-bai-viet",
+            "icon": "CgListTree"
+          },
+          {
+            "label": "Introduction",
+            "value": "bai-gioi-thieu",
+            "icon": "BsFileEarmarkPost"
+          }
+        ]
+      },
+      {
+        "label": "Communication",
+        "value": "kenh-truyen-thong",
+        "icon": "IoShareSocialOutline",
+        "children": [
+          {
+            "label": "Communication Channel",
+            "value": "kenh-truyen-thong",
+            "icon": "PiShareNetworkLight"
+          },
+          {
+            "label": "Introduction Slideshow",
+            "value": "slide-gioi-thieu",
+            "icon": "BiSlideshow"
+          },
+          {
+            "label": "Collections",
+            "value": "bo-suu-tap",
+            "icon": "IoImagesOutline"
+          }
+        ]
+      },
+      {
+        "label": "Account",
+        "value": "thong-tin-tai-khoan",
+        "icon": "MdManageAccounts",
+        "children": [
+          {
+            "label": "Account Information",
+            "value": "thong-tin-tai-khoan",
+            "icon": "AiOutlineProfile"
+          },
+          {
+            "label": "Account Management",
+            "value": "quan-ly-tai-khoan",
+            "icon": "BiSolidUserAccount"
+          }
+        ]
+      },
+      {
+        "label": "Reports",
+        "value": "bao-cao",
+        "icon": "TbReport",
+        "children": [
+          {
+            "label": "Traffic",
+            "value": "luot-truy-cap",
+            "icon": "BiLoader"
+          },
+          {
+            "label": "Customer Feedback",
+            "value": "phan-hoi-cua-khach-hang",
+            "icon": "BiPencil"
+          },
+          {
+            "label": "Orders",
+            "value": "don-hang",
+            "icon": "BiCube"
+          },
+          {
+            "label": "Most Viewed Products",
+            "value": "san-pham-xem-nhieu",
+            "icon": "BiHappy"
+          }
+        ]
+      },
+      {
+        "label": "Utilities",
+        "value": "dich-vu",
+        "icon": "BiHive",
+        "children": [
+          {
+            "label": "Branches",
+            "value": "chi-nhanh",
+            "icon": "GoGitBranch"
+          },
+          {
+            "label": "Partners",
+            "value": "doi-tac",
+            "icon": "LuGitCompare"
+          }
+        ]
+      }
+    ]
   }
+}

@@ -1,21 +1,134 @@
 {
-    "LoginPage": {
-      "HeaderTitle": "ADS - 登录",
-      "HeaderContent": "您好，请输入您的登录信息",
-      "Account": "账号",
-      "Password": "密码",
-      "Recover": "忘记密码",
-      "Login": "登录",
-      "Policies": "点击继续按钮即表示您同意",
-      "and": "和",
-      "Company": "ADS公司",
-      "RecoverTitle": "忘记密码了吗？",
-      "RecoverContent": "请输入您的电子邮件地址以重置密码",
-      "ResetPassword": "重置密码",
-      "Back": "返回",
-      
-    "Policy": "使用条款",
-    "Privacy": "隐私政策"
-
-    }
+  "DashboardPage": {
+    "Header": [
+      {
+        "label": "配置",
+        "value": "cau-hinh",
+        "icon": "IoSettingsOutline",
+        "children": []
+      },
+      {
+        "label": "产品",
+        "value": "danh-sach-san-pham",
+        "icon": "GiStarSattelites",
+        "children": [
+          {
+            "label": "产品列表",
+            "value": "danh-sach-san-pham",
+            "icon": "PiCirclesThreePlusDuotone"
+          },
+          {
+            "label": "产品目录",
+            "value": "danh-muc-san-pham",
+            "icon": "CiBoxList"
+          }
+        ]
+      },
+      {
+        "label": "文章",
+        "value": "danh-sach-bai-viet",
+        "icon": "BsPostcard",
+        "children": [
+          {
+            "label": "文章列表",
+            "value": "danh-sach-bai-viet",
+            "icon": "IoListSharp"
+          },
+          {
+            "label": "文章目录",
+            "value": "danh-muc-bai-viet",
+            "icon": "CgListTree"
+          },
+          {
+            "label": "简介",
+            "value": "bai-gioi-thieu",
+            "icon": "BsFileEarmarkPost"
+          }
+        ]
+      },
+      {
+        "label": "传媒",
+        "value": "kenh-truyen-thong",
+        "icon": "IoShareSocialOutline",
+        "children": [
+          {
+            "label": "传媒渠道",
+            "value": "kenh-truyen-thong",
+            "icon": "PiShareNetworkLight"
+          },
+          {
+            "label": "介绍幻灯片",
+            "value": "slide-gioi-thieu",
+            "icon": "BiSlideshow"
+          },
+          {
+            "label": "收藏",
+            "value": "bo-suu-tap",
+            "icon": "IoImagesOutline"
+          }
+        ]
+      },
+      {
+        "label": "账户",
+        "value": "thong-tin-tai-khoan",
+        "icon": "MdManageAccounts",
+        "children": [
+          {
+            "label": "账户信息",
+            "value": "thong-tin-tai-khoan",
+            "icon": "AiOutlineProfile"
+          },
+          {
+            "label": "账户管理",
+            "value": "quan-ly-tai-khoan",
+            "icon": "BiSolidUserAccount"
+          }
+        ]
+      },
+      {
+        "label": "报告",
+        "value": "bao-cao",
+        "icon": "TbReport",
+        "children": [
+          {
+            "label": "访问量",
+            "value": "luot-truy-cap",
+            "icon": "BiLoader"
+          },
+          {
+            "label": "客户反馈",
+            "value": "phan-hoi-cua-khach-hang",
+            "icon": "BiPencil"
+          },
+          {
+            "label": "订单",
+            "value": "don-hang",
+            "icon": "BiCube"
+          },
+          {
+            "label": "最多浏览的产品",
+            "value": "san-pham-xem-nhieu",
+            "icon": "BiHappy"
+          }
+        ]
+      },
+      {
+        "label": "便利设施",
+        "value": "dich-vu",
+        "icon": "BiHive",
+        "children": [
+          {
+            "label": "分支机构",
+            "value": "chi-nhanh",
+            "icon": "GoGitBranch"
+          },
+          {
+            "label": "合作伙伴",
+            "value": "doi-tac",
+            "icon": "LuGitCompare"
+          }
+        ]
+      }
+    ]
   }
+}
