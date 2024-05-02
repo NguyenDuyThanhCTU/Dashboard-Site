@@ -82,7 +82,7 @@ const SeoConfig = ({ Data }: { Data: Array<any> }) => {
             <BasicSEOBox setIsOpen={HandleOpen} Data={SEOconfigData} />
           </div>
           <div className=" border border-black shadow-sm bg-white rounded-md  ">
-            <AdvanceSEOBox setIsOpen={HandleOpen} />
+            <AdvanceSEOBox setIsOpen={HandleOpen} Data={contactData} />
           </div>
         </div>
         <Modal

@@ -1,8 +1,9 @@
 'use client';
-import { AccountProps } from '@assets/TypeProps';
-import InputForm from '@components/items/admin/UI/InputForm';
+import { AccountProps } from '@assets/props';
+import InputForm from '@components/dashboard/items/UI/InputForm';
+import { insertAndCustomizeId } from '@config/api/api';
+import { firebaseConfig } from '@config/firebase/firebase';
 import { useStateProvider } from '@context/StateProvider';
-import { insertAndCustomizeId } from '@lib/api';
 import { notification } from 'antd';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -27,12 +28,12 @@ const AccountForm = ({
   );
   const RoleItems = [
     {
-      value: 'editor',
-      label: 'Biên tập viên',
+      value: 'user',
+      label: 'Người dùng (Website giới thiệu)',
     },
     {
-      value: 'user',
-      label: 'Người Dùng',
+      value: 'user1',
+      label: 'Người Dùng (Website bán hàng)',
     },
     {
       value: 'admin',
@@ -51,10 +52,10 @@ const AccountForm = ({
     },
   ];
   const router = useRouter();
-
   const HandleSubmit = async () => {
     if (Type === 'update') {
       await insertAndCustomizeId(
+        firebaseConfig,
         'Accounts',
         FormData,
         `${accountLength ? 100000000000 + accountLength : 100000000000}`
@@ -82,15 +83,37 @@ const AccountForm = ({
           message: 'Thêm thành viên không thành công',
           description: 'Tài khoản đã tồn tại!',
         });
+      } else if (
+        !FormData.apiKey ||
+        !FormData.projectId ||
+        !FormData.messagingSenderId ||
+        !FormData.measurementId ||
+        !FormData.appId
+      ) {
+        notification.info({
+          message: 'Thêm thành viên không thành công',
+          description: 'Cấu hình Firebase chưa đầy đủ!',
+        });
       } else {
         let Data = {
           ...FormData,
+          id: `${accountLength ? 100000000000 + accountLength : 100000000000}`,
           stt: accountLength,
           status: 'active',
           image: SelectedAvatar,
+          firebaseConfig: {
+            apiKey: FormData.apiKey,
+            projectId: FormData.projectId,
+            measurementId: FormData.messagingSenderId,
+            messagingSenderId: FormData.measurementId,
+            appId: FormData.appId,
+            authDomain: `${FormData.projectId}.firebaseapp.com`,
+            storageBucket: `${FormData.projectId}.appspot.com`,
+          },
         };
         delete Data.retype;
         await insertAndCustomizeId(
+          firebaseConfig,
           'Accounts',
           Data,
           `${accountLength ? 100000000000 + accountLength : 100000000000}`
@@ -112,7 +135,7 @@ const AccountForm = ({
   ];
 
   return (
-    <div className="flex flex-col gap-2 justify-center items-center">
+    <div className="flex flex-col gap-2 justify-center items-center font-LexendDeca font-normal">
       <div>
         <Image
           src={FormData.image ? FormData.image : SelectedAvatar}
@@ -173,6 +196,23 @@ const AccountForm = ({
               Option={StatusItems}
             />
           )}
+          <div className="border-2 border-red-500 border-dashed">
+            <div className="p-3 flex flex-col gap-1">
+              <InputForm Label="apiKey" Type="Input" field="apiKey" />
+              <InputForm Label="projectId" Type="Input" field="projectId" />
+              <InputForm
+                Label="messagingSenderId"
+                Type="Input"
+                field="messagingSenderId"
+              />
+              <InputForm Label="appId" Type="Input" field="appId" />
+              <InputForm
+                Label="measurementId"
+                Type="Input"
+                field="measurementId"
+              />
+            </div>
+          </div>
 
           <div className="flex items-center cursor-pointer gap-3 justify-center mt-2">
             <div className="py-2 px-4 border text-black hover:bg-gray-200 duration-300 hover:border-gray-400">

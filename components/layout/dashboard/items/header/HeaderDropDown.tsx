@@ -2,8 +2,10 @@
 import Link from 'next/link';
 import React from 'react';
 import { DashboardMapping } from '../items';
+import { useAuth } from '@context/AuthProviders';
 
 const HeaderDropDown = ({ Data }: any) => {
+  const { HandleDashboardNavigate } = useAuth();
   return (
     <>
       <div className="py-3 min-w-[160px] border-gray-300  border border-solid rounded-lg bg-white relative  ">
@@ -12,14 +14,16 @@ const HeaderDropDown = ({ Data }: any) => {
             const Icon = DashboardMapping[item.icon];
 
             return (
-              <Link
-                href={`/admin?tab=${item.value}`}
+              <div
+                onClick={() =>
+                  HandleDashboardNavigate(`/admin?tab=${item.value}`)
+                }
                 key={index}
                 className="flex gap-2 items-center font-light hover:bg-gray-100 h-max py-2 px-5 text-[14px]  rounded-md cursor-pointer"
               >
                 {Icon && <Icon className="" />}
                 <p className="w-max">{item.label}</p>
-              </Link>
+              </div>
             );
           })}
         </div>

@@ -1,11 +1,12 @@
-import { AccountProps } from '@assets/TypeProps';
-import { deleteOne } from '@lib/api';
+import { AccountProps } from '@assets/props';
+import { deleteOne } from '@config/api/api';
+import { firebaseConfig } from '@config/firebase/firebase';
 import { Popconfirm, Tooltip } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import { FaEdit, FaUserCheck } from 'react-icons/fa';
+import { FaEdit, FaUserCheck, FaUserTag } from 'react-icons/fa';
 import { FaUserGear, FaUserPen } from 'react-icons/fa6';
 import { IoBanSharp } from 'react-icons/io5';
 import { MdDeleteForever, MdOutlineVerifiedUser } from 'react-icons/md';
@@ -23,7 +24,7 @@ const ListAccountBox = ({
 }: ListAccountBoxProps) => {
   const router = useRouter();
   const HandleDelete = async (id: string) => {
-    deleteOne('Accounts', id).then(() => {
+    deleteOne(firebaseConfig, 'Accounts', id).then(() => {
       router.refresh();
     });
   };
@@ -103,13 +104,13 @@ const ListAccountBox = ({
                       <FaUserGear className="text-red-500" />
                     </Tooltip>
                   ) : item.role === 'user' ? (
-                    <Tooltip title="Người dùng">
+                    <Tooltip title="Người dùng (Website giới thiệu)">
                       <FaUserCheck className="text-blue-500" />
                     </Tooltip>
                   ) : (
-                    item.role === 'editor' && (
-                      <Tooltip title="Biên tập viên">
-                        <FaUserPen className="text-orange-500" />
+                    item.role === 'user1' && (
+                      <Tooltip title="Người dùng (website bán hàng)">
+                        <FaUserTag className="text-orange-500" />
                       </Tooltip>
                     )
                   )}

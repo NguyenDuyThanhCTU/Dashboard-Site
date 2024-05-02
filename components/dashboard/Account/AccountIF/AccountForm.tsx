@@ -1,13 +1,27 @@
+'use client';
 import InputForm from '@components/dashboard/items/UI/InputForm';
+import { updateOne } from '@config/api/api';
+import { firebaseConfig } from '@config/firebase/firebase';
+import { useAuth } from '@context/AuthProviders';
+import { useStateProvider } from '@context/StateProvider';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const AccountForm = ({ setIsOpen }: any) => {
+  const { FormData } = useStateProvider();
+  const { currentUser } = useAuth();
   const genderItems = [
     { label: 'Nam', value: 'Nam' },
     { label: 'Nữ', value: 'Nữ' },
     { label: 'Khác', value: 'Khác' },
   ];
-  const HandleSubmit = () => {};
+  const router = useRouter();
+  const HandleSubmit = () => {
+    updateOne(firebaseConfig, 'Accounts', currentUser.id, FormData).then(() => {
+      router.refresh();
+      router.push('/login');
+    });
+  };
   return (
     <div className="">
       <div className="flex flex-col gap-2 pb-4">

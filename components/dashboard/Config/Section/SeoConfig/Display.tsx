@@ -1,7 +1,6 @@
 'use client';
 
-import { WebsiteUrl } from '@assets/items';
-import { SEOProps } from '@assets/props';
+import { ContactProps, SEOProps } from '@assets/props';
 import HeaderBox from '@components/dashboard/items/UI/HeaderBox';
 import { useStateProvider } from '@context/StateProvider';
 import { Tooltip } from 'antd';
@@ -107,7 +106,13 @@ export const BasicSEOBox = ({ setIsOpen, Data }: SEOBoxProps) => {
   );
 };
 
-export const AdvanceSEOBox = ({ setIsOpen }: SEOBoxProps) => {
+export const AdvanceSEOBox = ({
+  setIsOpen,
+  Data,
+}: {
+  setIsOpen: (isOpen: string) => void;
+  Data: ContactProps;
+}) => {
   const { HandleNavigate } = useStateProvider();
   return (
     <div className="p-4 flex flex-col gap-1">
@@ -125,9 +130,9 @@ export const AdvanceSEOBox = ({ setIsOpen }: SEOBoxProps) => {
           </div>
           <div
             className="col-span-5 pl-2 py-2 flex gap-2 overflow-auto scrollbar-thin text-[#006621] cursor-pointer"
-            onClick={() => HandleNavigate(`${WebsiteUrl}/robots.txt`)}
+            onClick={() => HandleNavigate(`${Data.WebsiteAddress}/robots.txt`)}
           >
-            {WebsiteUrl}/robots.txt
+            {Data.WebsiteAddress}/robots.txt
           </div>
           <div className="py-2 pr-3 flex items-start gap-2 col-span-2 w-full justify-end mt-2 ">
             Nội dung file robots.txt:
@@ -144,7 +149,7 @@ export const AdvanceSEOBox = ({ setIsOpen }: SEOBoxProps) => {
             Đường dẫn tới file sitemap.xml:
           </div>
           <div className="col-span-5 pl-2 py-2 flex gap-2 overflow-auto scrollbar-thin text-[#006621] cursor-pointer">
-            {WebsiteUrl}/sitemap.xml
+            {Data.WebsiteAddress}/sitemap.xml
           </div>
           <div className="py-2 pr-3 flex items-start gap-2 col-span-2 w-full justify-end mt-2 ">
             Nội dung file sitemap.xml:
@@ -153,7 +158,7 @@ export const AdvanceSEOBox = ({ setIsOpen }: SEOBoxProps) => {
             <div className="p-2 overflow-auto">
               {`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc${WebsiteUrl}</loc>
+        <loc${Data.WebsiteAddress}</loc>
         <lastmod>2023-04-06T15:02:24.021Z</lastmod>
         <changefreq>yearly</changefreq>
         <priority>1</priority>

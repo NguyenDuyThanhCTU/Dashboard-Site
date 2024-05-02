@@ -16,22 +16,7 @@ const AccountIF = () => {
   const [isOpenUpdate, setIsOpenUpdate] = React.useState(false);
   const { setFormData } = useStateProvider();
   const { currentUser } = useAuth();
-  // const HeaderAdmin = {
-  //   username: 'admin',
-  //   daysSinceCreation: 0,
-  //   name: 'Nguyễn Văn A',
-  //   email: 'a@gmail.com',
-  //   phone: '012512125',
-  //   address: 'Hà Nội',
-  //   dateofbirth: '12/12/1999',
-  //   gender: 'Nam',
-  //   introduce: 'Tôi là người tốt bụng',
-  //   status: 'active',
-  //   role: 'admin',
-  //   image:
-  //     'https://firebasestorage.googleapis.com/v0/b/notfound-f66a9.appspot.com/o/Logo-v1.webp?alt=media&token=cea9d5ae-d1f6-42b3-b6f8-82b5d115ff9e',
-  // };
-  console.log(currentUser);
+
   return (
     <div className="px-10 bg-white rounded-md">
       <div className="p-4">
@@ -58,7 +43,7 @@ const AccountIF = () => {
                   {
                     children: `Số điện thoại: ${
                       currentUser?.phone ? currentUser?.phone : 'Đang cập nhật'
-                    } }`,
+                    } `,
                     dot: <MdPhoneInTalk />,
                   },
                   {
@@ -66,7 +51,7 @@ const AccountIF = () => {
                       currentUser?.address
                         ? currentUser?.address
                         : 'Đang cập nhật'
-                    }}`,
+                    }`,
                     dot: <FaSearchLocation />,
                   },
                   {
@@ -74,7 +59,7 @@ const AccountIF = () => {
                       currentUser?.dateofbirth
                         ? currentUser?.dateofbirth
                         : 'Đang cập nhật'
-                    }}`,
+                    }`,
                     dot: <BsCake2 />,
                   },
                   {
@@ -82,7 +67,7 @@ const AccountIF = () => {
                       currentUser?.gender
                         ? currentUser?.gender
                         : 'Đang cập nhật'
-                    } }`,
+                    } `,
                     dot: <FaTransgender />,
                   },
                   {

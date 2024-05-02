@@ -18,6 +18,8 @@ import Header from '@components/layout/dashboard/Header';
 import { find, findById } from '@config/api/api';
 import { Metadata } from 'next';
 import { getDictionary } from '../dictionaries';
+import Error from '@components/dashboard/Authorization/Error';
+import { firebaseConfig } from '@config/firebase/firebase';
 
 export const metadata: Metadata = {
   title: 'Quản trị website',
@@ -38,9 +40,7 @@ const DashboardPage = async ({ searchParams, params }: DashboardPageProps) => {
   const ConfigData = await find(CurrentUser, 'Config', true);
   const ProductsData = await find(CurrentUser, 'Products', true);
   const PostsData = await find(CurrentUser, 'Posts', true);
-
   const dict = await getDictionary(params.lang);
-  console.log(searchValue);
   let componentToRender;
   switch (searchValue) {
     case 'home':
@@ -185,16 +185,16 @@ const DashboardPage = async ({ searchParams, params }: DashboardPageProps) => {
     case 'thong-tin-tai-khoan':
       componentToRender = <AccountIF />;
       break;
-    // case 'quan-ly-tai-khoan':
-    //   const AccountData = await find(
-    //     CurrentUser.firebaseConfig,
-    //     'Accounts',
-    //     true
-    //   );
-    //   componentToRender = <General Data={AccountData} />;
-    //   break;
-    // default:
-    //   componentToRender = null;
+    case 'quan-ly-tai-khoan':
+      const AccountData = await find(firebaseConfig, 'Accounts', true);
+      if (CurrentUser?.role === 'admin') {
+        componentToRender = <General Data={AccountData} />;
+      } else {
+        componentToRender = <Error />;
+      }
+      break;
+    default:
+      componentToRender = null;
   }
 
   return (
@@ -208,3 +208,5 @@ const DashboardPage = async ({ searchParams, params }: DashboardPageProps) => {
 };
 
 export default DashboardPage;
+
+//eyJzdHQiOiIwIiwiaWQiOiIxMDAwMDAwMDAwMDAiLCJuYW1lIjoiVGhhbmgxYWFhYSIsInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluQCIsInJvbGUiOiJhZG1pbiIsImRhdGUiOiJUaOG7qSBOxINtLCAyNS80LzIwMjQiLCJmaXJlYmFzZUNvbmZpZyI6eyJhcGlLZXkiOiJBSXphU3lCT3gxRjJ3YkRDbHlHamstNFhDTVRFZzBsNVlHTEdNUTgiLCJhcHBJZCI6IjE6NDg4NzcyMTY1NjU5OndlYjpiMWEzNTc4OTlkNDU5ZjA0ODAxOGJlIiwiYXV0aERvbWFpbiI6ImFkc3NpdGUtMTNhZGMuZmlyZWJhc2VhcHAuY29tIiwic3RvcmFnZUJ1Y2tldCI6ImFkc3NpdGUtMTNhZGMuYXBwc3BvdC5jb20iLCJtZWFzdXJlbWVudElkIjoiRy0xNDkyRUM2RkhMIiwibWVzc2FnaW5nU2VuZGVySWQiOiI0ODg3NzIxNjU2NTkiLCJwcm9qZWN0SWQiOiJhZHNzaXRlLTEzYWRjIn0sImFwaUtleSI6IkFJemFTeUJPeDFGMndiRENseUdqay00WENNVEVnMGw1WUdMR01ROCIsInByb2plY3RJZCI6ImFkc3NpdGUtMTNhZGMiLCJtZXNzYWdpbmdTZW5kZXJJZCI6IkctMTQ5MkVDNkZITCIsImFwcElkIjoiMTo0ODg3NzIxNjU2NTk6d2ViOmIxYTM1Nzg5OWQ0NTlmMDQ4MDE4YmUiLCJtZWFzdXJlbWVudElkIjoiRy0xNDkyRUM2RkhMIn0%3D

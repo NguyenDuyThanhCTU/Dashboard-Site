@@ -13,7 +13,6 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const strCurrentUser = atob(searchValue);
   const CurrentUser = JSON.parse(strCurrentUser);
   useEffect(() => {
-    console.log(CurrentUser);
     setCurrentUser(CurrentUser);
     setUserKey(searchValue);
   }, []);

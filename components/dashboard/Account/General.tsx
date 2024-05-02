@@ -1,16 +1,19 @@
 'use client';
-import CRUDButton from '@components/items/admin/UI/CRUDButton';
-import SortTable from '@components/items/admin/UI/SortTable';
+
 import { useStateProvider } from '@context/StateProvider';
 import { Modal } from 'antd';
 import React, { useState } from 'react';
 import AccountHandle from './General/AccountHandle';
-import Search from '@components/items/admin/UI/Search';
-import FileSaver from '@components/items/admin/Handle/FileSaver';
+
 import ListAccountBox from './General/Display';
 import ManagerBox from './General/Manager';
+import CRUDButton from '../items/UI/CRUDButton';
+import FileSaver from '../items/Handle/FileSaver';
+import Search from '../items/UI/Search';
+import SortTable from '../items/UI/SortTable';
+import { AccountProps } from '@assets/props';
 
-const General = ({ Data }: any) => {
+const General = ({ Data }: { Data: AccountProps[] }) => {
   const [isOpenAddModal, setIsOpenAddModal] = useState(false);
   const [isOpenUpdateModal, setIsOpenUpdateModel] = useState(false);
   const [DataFilter, setDataFilter] = useState<any>([]);
@@ -43,7 +46,6 @@ const General = ({ Data }: any) => {
           <div className="flex items-center gap-4 text-[14px] d:flex-row p:flex-col">
             <FileSaver Data={Data} />
             <Search Data={Data} Select={HandleSelected} Field="name" />
-
             <SortTable Data={Data} setData={setDataFilter} Field="name" />
           </div>
         </div>

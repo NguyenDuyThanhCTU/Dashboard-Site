@@ -243,17 +243,17 @@ export const updateOne = async (
       message: 'Cập nhật thành công',
     });
   } catch (error) {
-    try {
-      await insertAndCustomizeId(dbConfig, collectionName, newData, id);
-      notification.success({
-        message: 'Thành công',
-      });
-    } catch (error) {
-      notification.error({
-        message: 'Cập nhật thất bại',
-        description: `Mã lỗi: ${error}`,
-      });
-    }
+    // try {
+    //   await insertAndCustomizeId(dbConfig, collectionName, newData, id);
+    //   notification.success({
+    //     message: 'Thành công',
+    //   });
+    // } catch (error) {
+    //   notification.error({
+    //     message: 'Cập nhật thất bại',
+    //     description: `Mã lỗi: ${error}`,
+    //   });
+    // }
 
     throw error;
   }

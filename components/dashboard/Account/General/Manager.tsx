@@ -1,5 +1,5 @@
 'use client';
-import { AccountProps } from '@assets/TypeProps';
+import { AccountProps } from '@assets/props';
 import { Progress, Statistic, Timeline } from 'antd';
 import React, { useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
@@ -13,7 +13,7 @@ const ManagerBox = ({ Data }: { Data: AccountProps[] }) => {
   const countBlock = Data?.filter((item) => item.status === 'block')?.length;
   const countUser = Data?.filter((item) => item.role === 'user')?.length;
   const countAdmin = Data?.filter((item) => item.role === 'admin')?.length;
-  const countEditor = Data?.filter((item) => item.role === 'editor')?.length;
+  const countEditor = Data?.filter((item) => item.role === 'user1')?.length;
 
   const activepercent: any = ((countActive / Data?.length) * 100).toFixed(2);
   const blockpercent: any = ((countBlock / Data?.length) * 100).toFixed(2);

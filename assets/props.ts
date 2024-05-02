@@ -159,12 +159,12 @@ export interface CollectionProps {
 
 export interface FirebaseConfigProps {
   apiKey: string;
+  projectId: string;
+  measurementId: string;
+  messagingSenderId: string;
   appId: string;
   authDomain: string;
   storageBucket: string;
-  measurementId: string;
-  messagingSenderId: string;
-  projectId: string;
 }
 
 export interface AccountProps {
@@ -174,6 +174,7 @@ export interface AccountProps {
   username: string;
   password: string;
   role: 'user' | 'user1' | 'admin';
+  status: 'active' | 'block';
   apiKey: string;
   appId: string;
   firebaseConfig: FirebaseConfigProps;
